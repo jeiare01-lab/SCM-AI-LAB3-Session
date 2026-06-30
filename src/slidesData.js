@@ -1,0 +1,452 @@
+export const SLIDES = [
+  {
+    id: 1,
+    title: 'Cover',
+    layerTag: null,
+    color: '#0D1B3D',
+    heading: 'LAB 3: BUILD THE PLATFORM',
+    sub: 'PGB AI Platform Roadmap · 4 Lessons + Capstone · Read · Build · Present',
+    body: [
+      { type: 'layers', items: [
+        { label: 'L1 · NetSuite ERP', tag: 'LIVE', tagColor: '#16A34A', color: '#C0392B' },
+        { label: 'L2 · PGB SCE', tag: 'BUILD', tagColor: '#F59E0B', color: '#1E40AF' },
+        { label: 'L3 · PGB AI Intel', tag: 'BUILD', tagColor: '#F59E0B', color: '#0D9488' },
+      ]},
+    ],
+    question: null,
+    dialogue: [
+      { type: 'timing', time: '0:00 — 0:05', phase: 'PHASE: WELCOME' },
+      { type: 'note', text: 'Join the call 10 minutes early. Open the PGB AI Lab 3 app and confirm your screen share is showing the right window before anyone joins — test that the Claude API responds by trying a quick prompt in the Lesson 3.1 Build tab.' },
+      { type: 'tip', text: "If you are running this facilitator-led with participants following along on your shared screen rather than their own devices, say so explicitly at the start so there's no confusion about whether they need to open anything themselves." },
+      { type: 'say', text: "Good morning, everyone, and welcome — thank you all for joining. I can see your names coming in on the call, so go ahead and pop a quick wave or hello in the chat if you're with us, just so I know everyone's connected before we get started. This is Lab 3 of the PGB AI Lab Series, and the focus for today is Build the Platform. Before I share my screen and we dive into the content, I want to take a moment to set the stage for why this session matters, because it's a genuine shift from where we've been in Labs 1 and 2." },
+      { type: 'say', text: "In the first two labs of this series, we spent our time studying platforms like Blue Yonder and C3 AI — these are tools that large enterprises license and pay subscription fees for, in order to run their supply chains and their AI operations. We looked at how they work, what they do well, and how organizations use them. That was valuable groundwork, because it gave us a vocabulary and a mental model for what enterprise AI actually looks like in practice. But today, Lab 3 takes a genuinely different direction, and I want you to notice that shift as we go. We are not here today to study what someone else built. We are here to study what PGB itself is building — our own platform, our own intellectual property, our own intelligence, made in-house, owned outright, with nothing licensed from any of those vendors we looked at before." },
+      { type: 'note', text: "Let that distinction land before moving forward — don't rush past it. The shift from 'we study tools other companies built' to 'we are building our own' is the emotional and intellectual center of gravity for this entire lab." },
+      { type: 'say', text: "I want to open with a quick question for all of you, and I'd love a few of you to respond either out loud or in the chat — whichever you're more comfortable with. Here's the question: if you had to choose, would you rather rent a house, or own one? Take a few seconds, and toss your answer into the chat." },
+      { type: 'say', text: "Exactly — and that instinct you all just shared is the same logic driving PGB's decision with AI. For years, in a sense, we have been renting intelligence from outside platforms, paying for access without ever building equity in what we use. Starting with this lab, we begin building a home of our own — something PGB owns outright, that grows in value over time instead of disappearing the moment we stop paying a subscription. Let's get into it — I'm going to share my screen now." },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Programme Overview',
+    layerTag: null,
+    color: '#0D1B3D',
+    heading: 'LAB 3 PROGRAMME OVERVIEW',
+    sub: '4 Lessons + Capstone · ~90 minutes',
+    body: [
+      { type: 'modgrid', items: [
+        { num: '3.1', title: 'Why PGB Builds Its Own AI', time: '15 min', color: '#1E40AF' },
+        { num: '3.2', title: 'PGB Supply Chain Engine', time: '20 min', color: '#1E40AF' },
+        { num: '3.3', title: 'PGB AI Intel', time: '20 min', color: '#0D9488' },
+        { num: '3.4', title: 'The 3-Layer Architecture', time: '15 min', color: '#7C3AED' },
+        { num: '★', title: 'Capstone: Design Your Module', time: '20 min', color: '#F59E0B' },
+      ]},
+    ],
+    question: { id: 'q2', prompt: 'What are you most curious to learn in Lab 3?', placeholder: 'Type your answer...' },
+    dialogue: [
+      { type: 'timing', time: '0:00 — 0:05', phase: 'Session orientation' },
+      { type: 'say', text: "Each lesson follows the same rhythm: Read, Build, Present. In Read you consume the content. In Build you apply it with the AI assistant. In Present you explain it — because if you can explain it, you own it." },
+      { type: 'note', text: "Point to each lesson card on the slide as you name them — this visual anchor matters even more on a call since participants can't glance around a physical room for cues." },
+      { type: 'say', text: "And the Capstone — where you design an actual module for your SBU. The modules you design are real. PGB is building them this year." },
+      { type: 'say', text: "Quick warm-up before we start: what are you most curious to learn today? Type your answer in the app — I'll read a few out." },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Lesson 3.1: Why Build',
+    layerTag: 'L2',
+    color: '#1E40AF',
+    heading: 'LESSON 3.1 · WHY PGB BUILDS ITS OWN AI',
+    sub: '15 min',
+    body: [
+      { type: 'pillars', items: [
+        { icon: '🔒', title: 'Own the IP', desc: 'Every model and algorithm is permanent PGB IP. No vendor owns our competitive intelligence.' },
+        { icon: '☁️', title: 'Control the Stack', desc: 'No vendor lock-in. PGB defines the data model and feature roadmap on our own schedule.' },
+        { icon: '📈', title: 'Build Capability', desc: "Every module grows PGB's internal AI expertise — a permanent organisational asset." },
+      ]},
+      { type: 'costbar', text: 'BUILD COST: PHP 923,000 one-time + PHP 68,000/yr infrastructure · 100% PGB Owned' },
+    ],
+    question: { id: 'q3', prompt: 'What is the most important benefit of PGB building its own AI for your SBU?', placeholder: 'Type your reflection...' },
+    dialogue: [
+      { type: 'timing', time: '0:05 — 0:20', phase: 'READ → BUILD → PRESENT' },
+      { type: 'phase', text: 'PHASE 1 · READ' },
+      { type: 'say', text: "Alright, I've got Lesson 3.1 up on the screen now — if you're following along on your own device as well, go ahead and open Lesson 3.1 so we're looking at the same thing together. What I want to do for this first section is read through it together as a group, and I'll pause at a few key points to check that everyone's tracking with me, rather than just talking at you for eight straight minutes." },
+      { type: 'say', text: "So the very first card on this slide says: 'PGB has made a strategic decision — build our own AI platform using proven methodologies and open-source tools.' I want to pause right there for a second, because that phrase 'proven methodologies' is doing some real work, and before I explain what it means, I'm curious whether anyone wants to take a guess. Drop your thoughts in the chat, or unmute if you'd like to say it out loud." },
+      { type: 'say', text: "Good thinking, several of you are right on track. Remember, we studied Blue Yonder for supply chain operations and C3 AI for predictive analytics in our previous labs — so we already know what these platforms do and how they approach problems. What we're doing now is applying those same underlying thinking frameworks, the same conceptual approaches, but building the actual tools ourselves from the ground up. In other words, we get the knowledge and the methodology without ever paying for the license." },
+      { type: 'note', text: "If you sense any confusion in the chat or on faces during this part, it usually comes from people conflating 'methodology' — which is just a way of thinking about a problem — with 'platform,' which is the actual licensed software product. A useful analogy if you need it: a cooking school teaches you Gordon Ramsay's techniques. You don't need to go hire Gordon Ramsay himself to cook a great meal using what you learned." },
+      { type: 'say', text: "Now let's look at the three Strategic Pillars together on screen. I'd love for a few different people to read these out loud for the group, one pillar each — feel free to just unmute when you're ready, no need to wait for me to call on you specifically." },
+      { type: 'say', text: "So starting with Pillar One: Own the IP. This means every single model, every data pipeline, every algorithm that we build through this initiative belongs to PGB permanently. Not to a vendor, not as part of some recurring subscription we have to keep paying into — it's simply ours, indefinitely. Moving to Pillar Two: Control the Stack. Because we're building this in-house, we get to define exactly what gets built, when it gets updated, and how it integrates with the rest of our systems. We're not stuck waiting around for some outside vendor's release schedule or product roadmap decisions that have nothing to do with our actual needs. And then Pillar Three, which I'd argue is the most personally important one for everyone on this call: Build Capability. Every single module we build through this platform grows PGB's internal knowledge base. Over time, you — the people in this organization — become the actual AI experts, not some external consultants or vendor support team. That expertise stays here, with us." },
+      { type: 'say', text: "Let's talk numbers for a second, because I think the economics really drive this point home. The total build cost for this entire platform across 2026 comes to approximately 923,000 pesos as a one-time investment, plus about 68,000 pesos per year for ongoing hosting. Within twelve months, this build essentially pays for itself. And by year five, we will have saved tens of millions of pesos compared to licensing fees — all while owning a platform that keeps getting smarter and more valuable over time, rather than one that just disappears if we ever stop paying for it." },
+      { type: 'note', text: "Point participants to the Knowledge Check quiz inside the app and give them about 60 seconds to answer on their own screens. Resist the urge to reveal the answer right away — let them click through and see the feedback the app gives them first." },
+      { type: 'say', text: "Go ahead and take about a minute to answer the knowledge check question right there in the app. I'll give you a moment... and once you've got your answer, let me know in the chat if you got it right. The correct answer is B — own the IP, control the stack, build capability. That's really the foundation underneath everything we're going to cover for the rest of this session." },
+      { type: 'phase', text: 'PHASE 2 · BUILD' },
+      { type: 'say', text: "Now let's move into the Build phase — go ahead and switch over to the Build tab in the app. Here's your challenge for the next few minutes: imagine you're talking to a skeptical SBU General Manager, and they push back on you with a very reasonable question — 'Why should we spend 923,000 pesos building something from scratch when we could just subscribe to an existing platform instead?' This is a conversation you may genuinely have to navigate in real life, so let's use this time to prepare a strong answer together." },
+      { type: 'say', text: "Go ahead and try at least one of the three prompts listed there in the app — just type it into the AI assistant and see what comes back. I'm going to give you about three minutes for this, so go ahead and get started now." },
+      { type: 'note', text: "While the timer runs, keep an eye on the chat and unmute prompts if your platform supports it — call out interesting approaches you're seeing. If anyone seems stuck, drop a suggested starter prompt directly into the chat: 'Help me explain to a GM why building our own AI is better than buying a license for PGB.'" },
+      { type: 'say', text: "Alright, time's up on that one — who'd like to share what the AI came back with? Feel free to unmute, or paste it into the chat if that's easier. Notice how the AI gave you a genuinely structured argument there — touching on cost, on ownership, and on capability all together. That's exactly the kind of answer you'd want in your back pocket for that real GM conversation." },
+      { type: 'phase', text: 'PHASE 3 · PRESENT' },
+      { type: 'say', text: "Okay, last phase for Lesson 3.1 — let's move to Present. I'd love one volunteer for a quick 90-second challenge: using the framework we just walked through on screen, explain to the rest of the group why PGB is building its own AI platform. Feel free to use the three pillars as your structure if that's helpful. Who'd like to take this one? Go ahead and unmute whenever you're ready. Or if it's easier in Filipino: Sino ang gustong mag-volunteer? Mag-explain ka lang kung bakit nagtatayo tayo ng sariling AI platform, gamit ang tatlong pillar bilang gabay mo." },
+      { type: 'note', text: "After your volunteer presents, give them genuine, specific feedback rather than a generic 'great job.' Then ask everyone, not just the volunteer, to write their own reflection in the app before moving on." },
+      { type: 'say', text: "Before we move on to the next lesson, let's all take about 90 seconds to write a quick reflection in the Present tab. The question is: what's the most important benefit of PGB building its own AI for your specific SBU? Be honest about it — I'll give you that time now. Whenever you're ready, go ahead and mark Lesson 3.1 as complete in the app, and then let's move forward together into Lesson 3.2." },
+    ],
+  },
+  {
+    id: 4,
+    title: 'Lesson 3.2: PGB SCE',
+    layerTag: 'L2',
+    color: '#1E40AF',
+    heading: 'LESSON 3.2 · PGB SUPPLY CHAIN ENGINE',
+    sub: 'Layer 2 · In-House Build · 20 min',
+    body: [
+      { type: 'modcards', items: [
+        { q: 'Q1', title: 'Demand Forecasting', sbu: 'All SBUs', body: '4-week rolling forecast. Target: 85%→92%.' },
+        { q: 'Q2', title: 'Warehouse Optimizer', sbu: 'AAC·PSC·AMICI', body: 'Real-time utilisation alerts.' },
+        { q: 'Q2', title: 'Vessel Route Planner', sbu: 'AMICI only', body: 'Route optimisation + delay contingency.' },
+        { q: 'Q3', title: 'Freight Reconciliation', sbu: 'All SBUs', body: 'Auto-match invoices to NetSuite POs.' },
+        { q: 'Q3', title: 'SCE Recommendation Engine ★', sbu: 'All SBUs', body: 'ML-ranked actions. BI approval gate required.', highlight: true },
+      ]},
+      { type: 'note2', text: 'Key Principle: AI suggests. People decide. No recommendation executes without Business Integrator sign-off.' },
+    ],
+    question: { id: 'q4', prompt: 'Which PGB SCE module would have the biggest impact on your SBU, and why?', placeholder: 'Type your answer...' },
+    dialogue: [
+      { type: 'timing', time: '0:20 — 0:40', phase: 'READ → BUILD → PRESENT' },
+      { type: 'phase', text: 'PHASE 1 · READ' },
+      { type: 'say', text: "Let's open up Lesson 3.2 together — I've got it on screen now. We're moving into Layer 2 here, which is the PGB Supply Chain Engine. Think of it this way: this is the engine that sits directly on top of NetSuite and actually turns all that raw data into real operational decisions. If NetSuite is essentially our database, the PGB Supply Chain Engine is the brain that reads through that database and tells us, practically speaking, what to actually do with that information." },
+      { type: 'say', text: "There are five modules within the PGB Supply Chain Engine, and I'd like you to take a couple of minutes to read through each of these descriptions on your own screen. As you're reading, think specifically about which PGB entity each module would affect the most — that's going to help anchor this information as we discuss it together afterward. I'll give you about two minutes for this." },
+      { type: 'note', text: "While participants are reading, consider typing the five module names directly into the chat as a running list — Demand Forecasting, Warehouse Optimizer, Vessel Route Planner, Freight Reconciliation, Recommendation Engine — so it stays visible and anchors the discussion that follows, since on a call people can't glance over at a whiteboard the way they could in person." },
+      { type: 'say', text: "Let's walk through these together now, fairly quickly. Starting with the Demand Forecasting Engine — which SBU do you think would rely on this the most? Go ahead and drop a guess in the chat. That's right, it's really all SBUs, but especially AAC and PSC, because they handle the largest procurement volumes across the organization. Next, the Vessel Route Planner — who specifically does this one serve? Exactly, AMICI, and exclusively AMICI. This module plans out routes, detects delays as they happen, and automatically suggests land-route alternatives for our fleet when something goes wrong." },
+      { type: 'say', text: "And then there's the Recommendation Engine, which I'd actually call the most important module within this entire layer. But here's the critical design principle I want everyone to really internalize: no recommendation from this engine ever executes automatically. The Business Integrator has to approve every single one of them personally. There's always a human in the loop — without exception." },
+      { type: 'note', text: "This approval gate point deserves real emphasis. Participants very often assume that 'AI-powered' automatically means 'fully automated,' and that assumption needs correcting clearly: 'AI suggests. People decide. That's PGB's design principle running through every single recommendation module in this platform.'" },
+      { type: 'say', text: "Let's do the knowledge check now — go ahead and answer it there in the app, I'll give you about a minute. The correct answer is C, the Vessel Route Planner — it's the only module in this layer specifically designed for AMICI's maritime operations." },
+      { type: 'phase', text: 'PHASE 2 · BUILD' },
+      { type: 'say', text: "Let's switch over to the Build tab now. Here's the scenario I want you to work through: AMICI's vessel, the MV Ligaya, is delayed by two days on its CEB to ILO route. The PGB Supply Chain Engine has flagged three possible options for us — wait for the vessel to arrive, reroute the cargo by land instead, or split the cargo between land transport and the next available vessel. Your job right now is to use the AI assistant to analyze these three options the way the actual PGB SCE system would." },
+      { type: 'say', text: "Go ahead and work through at least two of the three prompts listed there. You'll have about five minutes for this — and I want to mention, this isn't a hypothetical scenario at all. Delays exactly like this happen fairly regularly in AMICI's day-to-day operations, so this is genuinely useful practice." },
+      { type: 'note', text: "After the five minutes wrap up, ask one participant to share the AI's cost analysis aloud or paste it into the chat. Then follow up with: 'Realistically, would you have been able to pull together this kind of analysis manually in five minutes?' The likely answer is no — it would normally take hours of phone calls and spreadsheet work." },
+      { type: 'say', text: "Great work, everyone. Notice what just happened there — you used an AI assistant to accomplish in about three minutes what would normally take an operations team two hours of phone calls and spreadsheet juggling. That speed difference is exactly the core value proposition of the PGB Supply Chain Engine." },
+      { type: 'phase', text: 'PHASE 3 · PRESENT' },
+      { type: 'say', text: "For the Present phase this time, I want to try something a little different — let's use breakout rooms. I'm going to pair you up with someone from a different SBU than your own. Once you're in your pair, each of you takes turns presenting your two chosen PGB Supply Chain Engine modules to your partner — about two minutes each. I'll set the breakout timer now and pull everyone back together shortly." },
+      { type: 'tip', text: "If your video platform doesn't support breakout rooms, an easy alternative is pairing people up by chat DM, or simply having 2–3 volunteers present to the whole group instead of running true pairs — the goal is just cross-SBU exposure to the modules." },
+      { type: 'say', text: "Welcome back, everyone — what did you notice during that exercise? Feel free to share in the chat or unmute. Right, the modules that matter most really do shift depending on your specific SBU, and that's by design — the PGB Supply Chain Engine is built to serve all four SBUs, but with different priorities for each one. Go ahead and write your reflection now, then mark Lesson 3.2 as complete, and let's move on together to Lesson 3.3." },
+    ],
+  },
+  {
+    id: 5,
+    title: 'Lesson 3.3: PGB AI Intel',
+    layerTag: 'L3',
+    color: '#0D9488',
+    heading: 'LESSON 3.3 · PGB AI INTEL',
+    sub: 'Layer 3 · In-House Build · 20 min',
+    body: [
+      { type: 'modcards', items: [
+        { q: 'Q1', title: 'Predictive Maintenance', sbu: 'AMICI·AAC·PSC', body: 'Anomaly detection. MV Paz first.' },
+        { q: 'Q2', title: 'Skills Analytics Engine', sbu: 'SEAMAN·SKILLS·PSI·PSEFI', body: 'Competency scoring per entity.' },
+        { q: 'Q3', title: 'STEP UP Recommender', sbu: 'All HCD', body: 'Auto-generate training priorities.' },
+        { q: 'Q4', title: 'Cross-Layer Risk Aggregator ⚠️', sbu: 'All SBUs · COO', body: 'Compound risk ≥60% → COO escalation.', highlight: true, riskColor: true },
+        { q: 'Q4', title: 'Executive KPI Dashboard', sbu: 'All SBUs · Leaders', body: 'L1–L3 single pane.' },
+      ]},
+      { type: 'note2', text: 'Compound Risk Example (68%): MV Paz engine anomaly (High) + W29 demand surge +18% + AAC Batching Plant B2 at 73% breakdown probability → COO escalation triggered.', danger: true },
+    ],
+    question: { id: 'q5', prompt: 'How could PGB AI Intel have changed a decision your team made in the past 3 months?', placeholder: 'Be specific...' },
+    dialogue: [
+      { type: 'timing', time: '0:40 — 1:00', phase: 'READ → BUILD → PRESENT' },
+      { type: 'phase', text: 'PHASE 1 · READ' },
+      { type: 'say', text: "Let's pull up Lesson 3.3 now — PGB AI Intel. Here's a helpful way to frame the distinction between the two layers we're covering today: if Layer 2, the Supply Chain Engine, is the engine running our supply chain operations in real time today, then Layer 3, AI Intel, is the intelligence layer that prepares us for whatever's coming tomorrow. Layer 2 is constantly asking 'what should we do right now?' while Layer 3 is asking a fundamentally different question: 'what's about to go wrong, and what should we do before it actually happens?'" },
+      { type: 'say', text: "There are five modules within PGB AI Intel, and the first two — Predictive Maintenance and Skills Analytics — are genuinely the highest priority, because they protect PGB's two biggest assets: our physical equipment on one side, and our people on the other." },
+      { type: 'say', text: "Let's start with Predictive Maintenance. This model continuously reads sensor data coming off our vessels and our equipment, and it looks for patterns that have historically preceded actual failures — then flags those patterns before the failure happens, rather than after. If you remember from the dashboard we looked at earlier, the MV Paz was flagged as HIGH risk, with action required by July 4th. The model detected vibration patterns that closely match a pre-failure signature we saw back in a 2024 incident. Without PGB AI Intel running in the background, we simply wouldn't catch that until the engine actually failed — and that failure would most likely happen at sea, mid-voyage, which is the worst possible time and place for it to happen." },
+      { type: 'note', text: "Give this a real beat to land before moving on — don't rush past it. The consequence of not having this module isn't abstract; it's a vessel breakdown at sea, passengers potentially stranded, cargo delayed, and a repair cost running around 2.1 million pesos, compared against the much smaller cost of a scheduled preventive maintenance window. Say this explicitly: 'This module exists specifically to prevent that exact scenario from happening.'" },
+      { type: 'say', text: "Now let's look at the Skills Analytics Engine, which serves our HCD entities — SEAMAN, SKILLS, PSI, and PSEFI. This module scores competency levels per entity and tells us precisely where the skill gaps are, broken down by role and by quarter. And from there, the STEP UP Recommender takes those identified gaps and automatically updates the STEP UP V2.0 training curriculum priorities. HCD no longer has to guess which training programs matter most in any given period — the underlying data tells them directly." },
+      { type: 'say', text: "And finally, let's talk about the Cross-Layer Risk Aggregator, which I genuinely consider the single most powerful module in the entire platform. What makes it so powerful is that it does something none of the individual modules can do on their own — it combines signals coming from all three layers simultaneously into one single compound risk score. And whenever that score reaches sixty percent confidence or higher, it automatically prepares an escalation directly to the COO." },
+      { type: 'say', text: "Let me walk you through a real example of how this plays out in practice. Picture three things happening at the exact same time: the MV Paz shows an engine anomaly flagged as HIGH risk. There's a demand surge for AAC cement in week 29, up eighteen percent. And the AAC Batching Plant B2 shows a seventy-three percent breakdown probability. Individually, each one of those is a moderate concern on its own. But combined together, they represent a genuine cascade failure waiting to happen. PGB AI Intel calculates that scenario at sixty-eight percent compound confidence, and it escalates automatically straight to the COO." },
+      { type: 'say', text: "Let's do the knowledge check now — go ahead and answer it in the app, I'll give you about a minute. The correct answer is C, sixty percent confidence. We act at that sixty percent threshold specifically because waiting around for absolute certainty would mean waiting until it's genuinely too late to do anything useful about it." },
+      { type: 'phase', text: 'PHASE 2 · BUILD' },
+      { type: 'say', text: "Let's move into the Build challenge for this lesson. Switch over to the Build tab now — your scenario is exactly the compound risk situation I just walked you through: the MV Paz issue, the week 29 demand surge, the Batching Plant B2 risk, all converging at sixty-eight percent confidence. Use the AI assistant to draft the actual COO escalation memo that PGB AI Intel would generate in this situation. I'll give you about five minutes — try working through all three prompts if you have time." },
+      { type: 'note', text: "After the five minutes, ask someone to read their drafted escalation memo aloud or paste it into the chat. Then pose this follow-up to the whole group: 'If you were the COO and this memo landed on your desk at seven in the morning, what would you actually do first?' This connects the abstract AI output to real decision-making." },
+      { type: 'say', text: "That memo, which the AI just drafted for you in about thirty seconds, would normally take a human analyst three to four hours to pull together properly. And by the time a person manually drafts something like that, the window for taking preventive action might already be closing. That speed difference is really the core advantage that PGB AI Intel brings to the table." },
+      { type: 'phase', text: 'PHASE 3 · PRESENT' },
+      { type: 'say', text: "For the Present phase here, I'd like one volunteer from either AMICI or Construction, and one volunteer from HCD. Each of you gets about ninety seconds — tell the group which PGB AI Intel module feels most critical for your specific SBU, and explain why. Whoever's ready first, go ahead and unmute. Or in Filipino, if that's easier: Sino mula sa AMICI o Construction? At sino naman mula sa HCD? Mag-share kayo kung ano ang pinaka-importanteng module ng PGB AI Intel para sa inyong SBU." },
+      { type: 'note', text: "After both volunteers present, synthesize what you heard for the group: 'Notice the pattern here — AMICI genuinely needs predictive maintenance to protect physical assets, while HCD needs skills analytics to protect human capital. PGB AI Intel was deliberately built to protect both, because both matter equally to the organization.'" },
+      { type: 'say', text: "Let's take a moment now to write your reflection — think about how PGB AI Intel could have changed a decision your own team made sometime in the last three months. Try to be specific about it rather than general. I'll give you about ninety seconds, and then go ahead and mark Lesson 3.3 as complete." },
+    ],
+  },
+  {
+    id: 6,
+    title: 'Lesson 3.4: Architecture',
+    layerTag: 'L3',
+    color: '#7C3AED',
+    heading: 'LESSON 3.4 · THE 3-LAYER ARCHITECTURE',
+    sub: 'How It All Connects · 15 min',
+    body: [
+      { type: 'handoffs', items: [
+        { n: '1', from: 'NetSuite → PGB SCE', owner: 'BI + IT · Manual gate', detail: 'BI sign-off required before every sync', color: '#C0392B' },
+        { n: '2', from: 'PGB SCE → PGB AI Intel', owner: 'IT · Automated', detail: 'Continuous API feed; IT monitors drift', color: '#1E40AF' },
+        { n: '3', from: 'PGB AI Intel → Action', owner: 'BI · Manual routing', detail: 'BI classifies & routes every alert', color: '#0D9488' },
+      ]},
+    ],
+    question: { id: 'q6', prompt: 'Which handoff point is most critical for platform success, and what would you do to protect it?', placeholder: 'Type your answer...' },
+    dialogue: [
+      { type: 'timing', time: '1:00 — 1:15', phase: 'READ → BUILD → PRESENT' },
+      { type: 'phase', text: 'PHASE 1 · READ' },
+      { type: 'say', text: "Let's open Lesson 3.4 now. We've covered all three layers individually at this point, so this lesson is really about how they connect to one another — the actual data flows between them, the handoff points, and critically, who owns each one of those handoffs." },
+      { type: 'say', text: "Take a look at the architecture diagram I've got on screen. NetSuite sits at the bottom, the PGB Supply Chain Engine sits in the middle, and PGB AI Intel sits at the top. Data flows upward through this stack — NetSuite syncs into the SCE, and the SCE in turn feeds AI Intel. But intelligence flows back downward too — AI Intel alerts get routed to the right people, who then take action either through the SCE or directly inside NetSuite itself." },
+      { type: 'say', text: "Now let's talk about the three handoff points, because these are genuinely the most critical moments in the entire platform — if a handoff ever breaks down, the whole chain breaks with it. Handoff One is NetSuite to the Supply Chain Engine, and the owner here is the Business Integrator together with IT. No data sync ever happens without the Business Integrator's quality gate sign-off first. If any records fail that gate, they get sent back to the SBU encoder for correction — never forward into the system." },
+      { type: 'say', text: "Handoff Two runs from the Supply Chain Engine to AI Intel, and IT Systems Admin owns this one. This is an automated API feed running continuously, with no manual gate involved — IT simply monitors it for sync failures or any data drift over time. And Handoff Three runs from AI Intel out to actual action, with the Business Integrator owning this one again. Every single alert coming out of Layer 3 gets classified and routed appropriately: equipment risk goes to the Maintenance Head, skills gaps go to the HCD Heads, and compound risk goes directly to the COO. The Business Integrator essentially functions as the router for the entire system, and tracks resolution timelines for every single alert that comes through." },
+      { type: 'note', text: "Consider sharing a simple annotated diagram or sketching the 3-layer stack live using your screen share's annotation tools, labeling the three handoff points as you describe them — this visual anchor will be directly referenced again during the capstone exercise." },
+      { type: 'say', text: "Let's do the knowledge check now — go ahead and answer in the app, about a minute for this one. The correct answer is B: failed records bounce back to the SBU encoder. That gate holds firm — bad data never moves forward in this system, ever. That's simply the rule." },
+      { type: 'phase', text: 'PHASE 2 · BUILD' },
+      { type: 'say', text: "For the Build challenge here, use the AI assistant to explain the three-layer architecture using a simple analogy — imagine you're explaining it to a brand-new department head who just joined PGB and has zero context. Try the first prompt listed there. I'll give you about five minutes for this." },
+      { type: 'note', text: "After five minutes, ask a few people to share the analogy their AI generated, either by unmuting or pasting into chat. Strong examples tend to sound like: 'NetSuite is the filing cabinet, the SCE is the operations manager, and AI Intel is the strategist.'" },
+      { type: 'phase', text: 'PHASE 3 · PRESENT' },
+      { type: 'say', text: "For this final present challenge in Lesson 3.4, I want to try something a little different — and this one has no AI assistance at all. Go ahead and close out of the app, or at minimum turn your screen away from it for a moment. From memory alone, I want you to explain the three layers and the three handoffs to whoever's sitting near you, or if you're alone, simply explain it out loud to yourself or type it fresh into the chat. You'll have about two minutes, and no peeking back at the screen." },
+      { type: 'note', text: "This no-notes recall exercise is intentional. If participants can explain the architecture from memory in their own conversational language, it means they genuinely own the concept rather than just having read it. The most common sticking point tends to be the handoff owners specifically — so it's worth repeating them one more time clearly: Business Integrator plus IT, then IT alone, then Business Integrator again." },
+      { type: 'say', text: "Go ahead and write your reflection now, then mark Lesson 3.4 as complete. We're almost at the finish line together — just one more section to go, the Capstone." },
+    ],
+  },
+  {
+    id: 7,
+    title: 'Capstone',
+    layerTag: '★',
+    color: '#F59E0B',
+    heading: '★ CAPSTONE · DESIGN YOUR PGB AI PLATFORM MODULE',
+    sub: '20 min',
+    body: [
+      { type: 'capsteps', items: [
+        { n: '1', label: 'SELECT', body: 'Choose your module from 6 options' },
+        { n: '2', label: 'BUILD', body: 'Complete the 5-field Module Design Brief with AI assistance' },
+        { n: '3', label: 'PRESENT', body: '90-second presentation: module, SBU, data, output path, KPI' },
+      ]},
+    ],
+    question: { id: 'q7', prompt: 'Name your module and the one KPI that proves it works.', placeholder: 'e.g. STEP UP Recommender — 85% skills score by Q3 2026' },
+    dialogue: [
+      { type: 'timing', time: '1:15 — 1:35', phase: 'BUILD → PRESENT' },
+      { type: 'say', text: "We've finally arrived at the Capstone, which I'm genuinely excited about. Everything we've covered across this entire lab — the three layers, the ten modules, the handoffs, the ownership principles — all of it comes together right here in this final exercise." },
+      { type: 'say', text: "Here's your challenge: choose one module from the PGB AI Platform Roadmap, or design something entirely your own, and build out a complete design brief for it. For this exercise, you're stepping into the role of Business Integrator for your specific SBU. And I want to stress — this isn't some hypothetical exercise we're doing just for practice. These are real modules that PGB is actually planning to build in 2026." },
+      { type: 'note', text: "Give participants about 30 seconds to browse through the six module cards in the app before they make their selection. Actively encourage the 'Design Your Own Module' option for more experienced participants. If anyone seems undecided, suggest: 'What's the biggest operational pain point in your SBU right now? Pick whichever module comes closest to solving that.'" },
+      { type: 'say', text: "Go ahead and select your module on screen now. Once you've made your choice, open up the AI Design Assistant, tell it which module you've selected, and ask it to help you design that module fully for your specific SBU context. You'll have about ten minutes for this — make sure you complete all five fields in the Module Design Brief section before time's up. Go ahead and get started now." },
+      { type: 'note', text: "During these ten minutes, check periodically that participants are actually filling in all five required fields — Module Name, SBU and Users, Data Inputs, Output Path, and KPI. The most common weak spot is the KPI field specifically — push people toward genuine specificity, so rather than 'improved accuracy' you want something like '85% forecast accuracy by Q3 2026.'" },
+      { type: 'say', text: "Alright, time's up on that — go ahead and wrap up wherever you are. I'd like to hear from three to four of you now, with about ninety seconds each. Walk us through the module you chose, which SBU it serves, what data it needs, how the output actually reaches the right person, and the one KPI that proves it's working. I'll keep an eye on time for you — who'd like to go first?" },
+      { type: 'note', text: "As each participant presents, listen for three things specifically: is the module clearly tied to a concrete SBU pain point? Are the data inputs realistic given what NetSuite actually contains? And is the KPI specific and genuinely measurable? After each presentation, prompt quick group engagement: 'Thumbs up in the chat if this module would genuinely help your operations.'" },
+      { type: 'say', text: "Thank you for that — let's give a quick thumbs up in the chat if that module would genuinely help your own operations. Any quick questions or additions for what we just heard? I'll take one or two before we move to the next presenter." },
+    ],
+  },
+  {
+    id: 8,
+    title: 'Closing',
+    layerTag: null,
+    color: '#0D1B3D',
+    heading: 'CLOSING · SYNTHESIS & COMMITMENT',
+    sub: '5 min',
+    body: [
+      { type: 'questions3', items: [
+        '01 · What is one thing from Lab 3 that changed how you think about AI in your SBU?',
+        '02 · What is one thing you can do in 30 days to prepare your team or data?',
+        '03 · Who else in PGB needs to understand this platform — will you tell them?',
+      ]},
+    ],
+    question: { id: 'q8', prompt: 'Your one commitment for the next 30 days:', placeholder: 'Type your commitment...' },
+    dialogue: [
+      { type: 'timing', time: '1:35 — 1:40', phase: 'SYNTHESIS · COMMITMENT · CLOSE' },
+      { type: 'say', text: "Let me bring everything we've covered together now. In Labs 1 and 2, we studied what AI platforms look like when an organization buys them off the shelf. In Lab 3 today, we designed what an AI platform looks like when an organization builds it themselves, from the ground up. And here's the part I really want to land with you: the modules you just designed in that last exercise — those are real. PGB is genuinely building these right now, and some of you on this call today may end up being the very people testing them, approving them, or actively using them by the end of 2026." },
+      { type: 'say', text: "I want to close our time together with three questions. Take about thirty seconds to think through each one — you don't need to share out loud unless you'd like to, though I'd genuinely love to hear a few responses. First question: what's one thing from today's Lab 3 session that changed how you personally think about AI within your SBU?" },
+      { type: 'say', text: "Second question: what's one specific thing you could do within the next thirty days to help prepare your team, or your data, for the PGB AI platform as it gets built?" },
+      { type: 'say', text: "And third: who else within PGB, beyond just yourself, needs to understand this platform — and will you be the one to actually tell them about it?" },
+      { type: 'note', text: "If time allows, invite two or three voluntary shares specifically for the second question — these tend to surface as concrete, accountable commitments rather than vague intentions. Common strong responses include things like 'I'm going to clean up our NetSuite data,' 'I'll talk to IT about the API access,' or 'I want to coordinate with AMICI Ops about sensor data access.'" },
+      { type: 'say', text: "I want to close with PGB's three core values, because they guide absolutely everything we're doing with this platform. Pagsalig — we trust one another to build this platform with genuine integrity and accuracy. Hiniusang Pagkugi — this entire platform represents a unified effort spanning all ten of our subsidiaries and all four SBUs working together. And Pagpalambo — every single module we build through this initiative grows PGB permanently, as a lasting organizational asset. Thank you all so much for your engagement and energy today — Lab 3 is officially complete, and the actual build begins now." },
+      { type: 'tip', text: "Consider keeping the call open for an extra 5 minutes after formally closing for anyone who wants to ask follow-up questions privately or just chat — virtual sessions often lose the natural in-person 'lingering conversation' that happens after a physical workshop, so explicitly offering that space helps replicate it." },
+    ],
+  },
+];
+
+// ════════════════════════════════════════════════════════════════════════════
+// LEARN CONTENT — Read / Quiz / Build / Present, keyed by slide id
+// Powers the participant-side Read/Build/Present tabs (merged from standalone app)
+// ════════════════════════════════════════════════════════════════════════════
+export const LEARN = {
+  3: { // Lesson 3.1
+    read: {
+      cards: [
+        {
+          title: '🏗️ The Build Decision',
+          paras: [
+            "PGB operates 10 subsidiaries across 4 Strategic Business Units — Construction & Manufacturing, Maritime, Real Estate, and Human Capital Development. Managing this complexity requires intelligent systems that understand PGB's specific data, workflows, and context.",
+            "Rather than licensing enterprise AI platforms at PHP 8–25M per year per platform, PGB has made a strategic decision: build our own AI platform using proven methodologies and open-source tools."
+          ],
+          callout: { label: 'Key Principle', text: "When you buy a platform, you get outputs. When you build a platform, you own the intelligence. PGB's AI models, data pipelines, and algorithms are permanent organizational assets — not rented capabilities." }
+        },
+        {
+          title: '🎯 The 3 Strategic Pillars',
+          pillars: [
+            { icon:'🔒', color:'#C0392B', title:'Own the IP', body:'Every model, pipeline, and algorithm becomes PGB intellectual property. No vendor owns our competitive intelligence. What we build, we keep — permanently.' },
+            { icon:'☁️', color:'#1E40AF', title:'Control the Stack', body:'No vendor lock-in. PGB defines the data model, integration points, and feature roadmap. We update on our schedule, not a SaaS release cycle.' },
+            { icon:'📈', color:'#0D9488', title:'Build Capability', body:'Every module built in-house grows PGB internal AI capability. Our team learns, iterates, and owns the platform — a permanent organizational asset that grows over time.' },
+          ]
+        },
+        {
+          title: '💰 The Economics',
+          paras: ["The total 2026 platform build cost is approximately PHP 923,000 one-time plus PHP 68,000/year in infrastructure (Supabase, Vercel, GitHub). Compare this to enterprise SaaS licenses which escalate every year and never become assets."],
+          callout: { label: 'PGB Context', text: "NetSuite is the only licensed platform in the stack — it's already active as PGB's ERP backbone. All AI intelligence (Layer 2 and Layer 3) is built entirely by PGB using open-source tools like Python, FastAPI, React, and Supabase." }
+        }
+      ]
+    },
+    quiz: {
+      q: "Which of the following best describes PGB's reason for building its own AI platform?",
+      options: [
+        "To copy what Blue Yonder and C3 AI do exactly",
+        "To own the IP, control the stack, and build permanent internal capability",
+        "Because PGB cannot afford any software licenses at all",
+        "To avoid using NetSuite as the data source"
+      ],
+      correctIndex: 1,
+      explain: "PGB builds for ownership, control, and capability — not just to save money."
+    },
+    build: {
+      scenario: "You are presenting PGB's AI platform strategy to a skeptical SBU General Manager who asks: \"Why should we spend PHP 923,000 building something when we can just subscribe to an existing platform?\" Use the AI assistant below to help craft your response.",
+      tasks: [
+        "Ask the AI to help you explain the 3 strategic pillars in simple Filipino business language",
+        "Ask the AI to generate a 5-year cost comparison between building vs. licensing",
+        "Ask the AI to help you identify which PGB SBU benefits most from in-house AI and why"
+      ],
+      placeholder: "e.g. 'Help me explain to a GM why building our own AI is better than buying Blue Yonder for PGB's supply chain'"
+    },
+    present: {
+      framework: "1. Hook: \"Ang tanong hindi kung kailangan natin ng AI — kundi kung may-ari ba tayo o nangungupahan lamang.\"\n2. Pillar 1: We own the IP\n3. Pillar 2: We control the stack\n4. Pillar 3: We build capability\n5. Close: The economics make it clear"
+    }
+  },
+  4: { // Lesson 3.2
+    read: {
+      cards: [
+        {
+          title: '⚙️ What is the PGB Supply Chain Engine?',
+          paras: ["The PGB Supply Chain Engine (PGB SCE) is Layer 2 of PGB's AI platform. It sits between NetSuite (Layer 1, the data source) and PGB AI Intel (Layer 3, the intelligence layer). Its job is to turn raw NetSuite data into actionable supply chain decisions."],
+          callout: { label: 'Core Function', text: "PGB SCE pulls inventory, procurement, and logistics data from NetSuite and uses it to forecast demand, optimize warehouses, plan vessel routes, reconcile freight costs, and surface ranked recommendations — all in minutes, not days." }
+        },
+        {
+          title: '📦 The 5 Modules',
+          modules: [
+            { icon:'📈', title:'Demand Forecasting Engine (Q1)', body:'Time-series model trained on 3 years of NetSuite PO + inventory data. Outputs a 4-week rolling forecast per SBU. Target: 85%→92% accuracy over 12 months.' },
+            { icon:'🏭', title:'Warehouse Optimizer (Q2)', body:'Real-time utilization tracking per site (AAC yard, PSC depot, AMICI port). Alerts trigger below 40% or above 90%. Recommends reallocation between sites.' },
+            { icon:'🚢', title:'Vessel Route Planner (Q2)', body:'Route optimization for AMICI fleet. Inputs: departure schedule, cargo manifest, port availability. Detects delays and triggers land-route contingency automatically.' },
+            { icon:'🧾', title:'Freight Reconciliation Module (Q3)', body:'Auto-matches freight invoices to NetSuite POs using fuzzy matching logic. Flags discrepancies above configurable threshold for Finance review.' },
+            { icon:'🤖', title:'SCE Recommendation Engine (Q3)', body:'Rule-based + ML ranking layer that surfaces prioritized action recommendations. BI approval gate required before any execution — human always stays in the loop.' },
+          ]
+        }
+      ]
+    },
+    quiz: {
+      q: "Which PGB SCE module is specifically designed for AMICI's maritime operations?",
+      options: ["Demand Forecasting Engine", "Freight Reconciliation Module", "Vessel Route Planner", "SCE Recommendation Engine"],
+      correctIndex: 2,
+      explain: "The Vessel Route Planner is exclusively for AMICI fleet operations."
+    },
+    build: {
+      scenario: "AMICI's MV Ligaya is delayed by 2 days on the CEB→ILO route. The SCE Recommendation Engine flags 3 options: (1) wait for vessel, (2) reroute cargo via land freight, (3) split cargo between land and next vessel. Use the AI assistant to analyze this scenario.",
+      tasks: [
+        "Ask the AI to evaluate the 3 options with estimated cost and SLA impact for PGB",
+        "Ask the AI what data from NetSuite the SCE would need to generate this recommendation",
+        "Ask the AI to write the SCE recommendation in the format a Business Integrator would approve or reject"
+      ],
+      placeholder: "e.g. 'Analyze the 3 rerouting options for MV Ligaya delay with cost and SLA impact for AMICI'"
+    },
+    present: {
+      framework: "• Choose 2 PGB SCE modules most relevant to your SBU\n• Start with the problem it solves, not the technology\n• Use a real PGB scenario (e.g., vessel delay, warehouse overflow)\n• End with: \"And the Business Integrator always approves before anything happens\""
+    }
+  },
+  5: { // Lesson 3.3
+    read: {
+      cards: [
+        {
+          title: '🧠 What is PGB AI Intel?',
+          paras: ["PGB AI Intel is Layer 3 — the intelligence layer. It sits above both NetSuite (data) and PGB SCE (supply chain execution) and combines signals from both to generate predictive insights, detect compound risks, and guide strategic decisions."],
+          callout: { label: 'Core Function', text: "Where PGB SCE asks \"What should we do today?\" — PGB AI Intel asks \"What will happen next week, and what should we prepare for?\" It turns historical patterns into future predictions across maintenance, workforce, and enterprise risk." }
+        },
+        {
+          title: '🔮 The 5 Modules',
+          modules: [
+            { icon:'⚙️', title:'Predictive Maintenance v1 (Q1)', body:'Anomaly detection on vessel and equipment sensor logs. AMICI MV Paz engine is first priority. Classifies risk as High / Medium / Low with a recommended action deadline.' },
+            { icon:'🎓', title:'Skills Analytics Engine (Q2)', body:'Competency scoring from training records and assessment data per HCD entity (SEAMAN, SKILLS, PSI, PSEFI). Surfaces gaps by role, entity, and quarter.' },
+            { icon:'💡', title:'STEP UP Recommender (Q3)', body:'Prescriptive layer: auto-generates the priority training list from gap scores. Projects score improvement per module. Directly updates STEP UP V2.0 curriculum priorities.' },
+            { icon:'🛡️', title:'Cross-Layer Risk Aggregator (Q4)', body:'Combines SCE demand signals + AI Intel anomalies into a compound risk score. When confidence reaches ≥60%, it triggers an automatic COO escalation with a draft crisis response workflow.' },
+            { icon:'📊', title:'Executive KPI Dashboard (Q4)', body:'Single-pane L1–L3 view: OTD, forecast accuracy, maintenance compliance, skills scores. Built on PGB design system. Role-based access. Powered by Claude API for AI narrative summaries.' },
+          ]
+        },
+        {
+          title: '⚠️ The Compound Risk Signal',
+          paras: ["The most powerful feature of PGB AI Intel is its ability to detect compound risk — situations where multiple problems combine to create a cascade failure."],
+          callout: { label: 'Real Example', text: "PGB AI Intel detects simultaneously: W29 demand surge (from SCE) + AAC inventory at 39% (from NetSuite) + Batching Plant B2 at 73% breakdown probability (from maintenance model). Compound confidence: 68% → automatic COO escalation triggered." }
+        }
+      ]
+    },
+    quiz: {
+      q: "At what confidence threshold does PGB AI Intel automatically escalate a compound risk alert to the COO?",
+      options: ["100% — only when certain", "80% confidence", "≥60% confidence", "50% — majority probability"],
+      correctIndex: 2,
+      explain: "We act at 60 because waiting for certainty means waiting until it's too late."
+    },
+    build: {
+      scenario: "PGB AI Intel has flagged a compound risk scenario: AMICI MV Paz engine anomaly (High risk, action by Jul 4) + W29 demand surge for AAC cement (+18%) + AAC Batching Plant B2 at 73% breakdown probability. Compound confidence: 68%.",
+      tasks: [
+        "Ask the AI to draft the COO escalation memo based on this compound risk scenario",
+        "Ask the AI what the recommended crisis response plan should look like for these 3 simultaneous risks",
+        "Ask the AI which PGB AI Intel module catches each risk and how they combine into a compound score"
+      ],
+      placeholder: "e.g. 'Draft a COO escalation memo for the compound risk: MV Paz engine failure + W29 demand surge + AAC Batching Plant breakdown at 68% confidence'"
+    },
+    present: {
+      framework: "• Present the PGB AI Intel module most relevant to your SBU (maintenance for ops, skills for HCD)\n• Explain the compound risk feature using the MV Paz example\n• End with: \"This is why we build it ourselves — no vendor knows our data like we do\""
+    }
+  },
+  6: { // Lesson 3.4
+    read: {
+      cards: [
+        {
+          title: '🏗️ How the 3 Layers Connect',
+          layers: [
+            { tag:'L1', color:'#C0392B', name:'NetSuite — The Foundation', body:'Single source of truth. All 10 subsidiaries. Financials, HR, payroll, procurement, inventory. Every other layer pulls from here. Without clean L1 data, L2 and L3 cannot function.' },
+            { tag:'L2', color:'#1E40AF', name:'PGB Supply Chain Engine — The Executor', body:'Turns NetSuite data into operational decisions. Demand forecasts, warehouse reallocation, vessel routes, freight matching, action recommendations. The business runs on L2 outputs day-to-day.' },
+            { tag:'L3', color:'#0D9488', name:'PGB AI Intel — The Intelligence', body:'Combines NetSuite + SCE signals to predict what will happen before it does. Maintenance failures, skills gaps, compound risks, executive KPIs. The COO and Business Integrator make strategic decisions based on L3 outputs.' },
+          ]
+        },
+        {
+          title: '🔁 The 3 Critical Handoffs',
+          handoffPairs: [
+            { label:'Handoff 1 · L1 → L2', text:'Owner: Business Integrator + IT. NetSuite data quality gate cleared (Step 1.5). IT triggers automated sync to PGB SCE. No sync without BI sign-off. Failed records bounce back to SBU encoder.' },
+            { label:'Handoff 2 · L2 → L3', text:'Owner: IT / Systems Admin. PGB SCE outputs stream continuously into PGB AI Intel via automated API feed. IT monitors for sync failures and data drift. No manual gate here — continuous flow.' },
+            { label:'Handoff 3 · L3 → Action', text:'Owner: Business Integrator. PGB AI Intel alerts classified and routed: equipment risk → Maintenance Head, skills gap → HCD Heads, compound risk → COO. BI tracks resolution SLAs for every alert.' },
+          ]
+        },
+        {
+          title: '👥 Who Owns What',
+          list: [
+            'Business Integrator (JR) — Platform architect, L1 gate owner, L3 alert router, overall accountability',
+            'Finance Head — NetSuite data governance, PO quality, freight reconciliation UAT',
+            'IT / Systems Admin — Build all layers, API integration, CI/CD, hosting',
+            'AMICI Ops Manager — Vessel sensor data, route planner UAT, maintenance sign-off',
+            'HCD Entity Heads — Training records, skills analytics UAT, STEP UP enrollment decisions',
+            'COO — Budget approval, platform go/no-go, compound risk response, Q4 go-live',
+          ]
+        }
+      ]
+    },
+    quiz: {
+      q: "What happens at Handoff 1 if NetSuite records fail the data quality gate?",
+      options: [
+        "PGB SCE uses the incomplete data anyway",
+        "Failed records bounce back to the SBU encoder for correction before retry",
+        "IT Admin fixes the records directly in NetSuite",
+        "The COO is automatically notified to approve the sync anyway"
+      ],
+      correctIndex: 1,
+      explain: "Data quality gates protect the entire platform — bad data in, bad AI out."
+    },
+    build: {
+      scenario: "You have been asked to brief a new PGB department head joining from outside the company. They have no context on the AI platform. They need to understand all 3 layers, the handoffs, and their role in the system — in 5 minutes or less.",
+      tasks: [
+        "Ask the AI to generate a simple 3-layer explanation using an analogy that a non-technical person would understand",
+        "Ask the AI to explain each handoff point in one sentence each, in plain language",
+        "Ask the AI: \"What questions should a new department head ask about the PGB AI platform in their first week?\""
+      ],
+      placeholder: "e.g. 'Explain PGB's 3-layer AI architecture using a simple analogy for a non-technical new hire'"
+    },
+    present: {
+      framework: "Draw the 3-layer architecture on a whiteboard (or describe it verbally) and explain the role of each layer and handoff to your team. No slides allowed — just your understanding."
+    }
+  },
+};
